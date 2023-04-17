@@ -1,0 +1,15 @@
+# Start nginx server
+ docker run -d nginx
+
+#Portforward to local
+ docker run -d -p 80:80 nginx
+
+#Check logs
+ docker logs 465
+
+#Go inside the container
+ docker exec -it 465 bash
+
+#Stop the container
+ docker stop 465
+

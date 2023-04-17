@@ -1,0 +1,22 @@
+#Create docker volume and call it my_volume
+docker volume create my_volume
+
+#Create Contaniner and attch volume to it
+docker run -d -v /var/lib/docker/volumes/my_volume/_data:/opt ramesh291989/app-go:v2
+
+# Add somet files in the folder
+colima ssh
+sudo su -
+cat > test.txt #add content
+
+#Create 2nd Contaniner and attch volume to it and check if file exists
+docker run -d -v /var/lib/docker/volumes/my_volume/_data:/opt ramesh291989/app-go:v2
+
+docker exec -it contianerid bash
+
+cd /opt
+ls
+
+
+
+

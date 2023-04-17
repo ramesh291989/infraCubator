@@ -1,0 +1,20 @@
+#create docker image with baseimage golang:alpine (refere Dockerfile)
+# Tag docker image with v1
+docker build . -t ramesh291989/go-app-v1
+
+
+
+#Run container and do curl
+docker run -d -p 8080:8080 ramesh291989/go-app-v1
+
+curl localhost:8080
+output:hello
+
+
+#Run docker history, observe and understand the output
+ docker history ramesh291989/go-app-v1
+
+ #Push the docker image to your dockerhub
+ docker login
+
+ docker push ramesh291989/go-app-v1
