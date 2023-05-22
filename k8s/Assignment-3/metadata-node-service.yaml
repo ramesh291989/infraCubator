@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: metadataservice
+  name: metadataservice
+spec:
+  ports:
+    - name: 80-80
+      nodePort: 30080
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    type: backend
+  type: NodePort

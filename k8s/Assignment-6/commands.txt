@@ -1,0 +1,17 @@
+##Add persistent volume using hostpath and redeploy mongo pod
+kubectl replace --force -f mongo-pod-definition.yaml
+
+##post the data from host machine
+curl --header "Content-Type: application/json" /
+--request POST --data '{"group":"sunitparekh","name":"city","value":"Pune"}' /
+http://192.168.64.2:30080/metadata ##(NodeIP:nodeport)
+
+##get data from host machine
+curl http://192.168.64.2:30080/metadata
+
+
+curl --header "Content-Type: application/json" --request POST --data '{"group":"sunitparekh","name":"city","value":"Pune"}' http://192.168.64.2:30080/metadata
+
+
+
+

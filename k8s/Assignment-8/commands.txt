@@ -1,0 +1,18 @@
+##Create configmap
+kubectl create -f app-config.yaml
+
+##Add config map reference and redeploy metadata pod
+kubectl replace --force -f metadata-pod.yaml
+
+##post the data from host machine
+curl --header "Content-Type: application/json" /
+--request POST --data '{"group":"sunitparekh","name":"city","value":"Pune"}' /
+http://192.168.64.4:30080/metadata ##(NodeIP:nodeport)
+
+##get data from host machine
+curl http://192.168.64.2:30080/metadata
+
+
+
+
+

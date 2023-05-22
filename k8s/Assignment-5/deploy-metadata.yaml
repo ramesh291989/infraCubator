@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: metadata
+  name: metadata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metadata
+  template:
+    metadata:
+      labels:
+        app: metadata
+    spec:
+      containers:
+        - image: luckyganesh/metadata-service:v2
+          name: metadata-service
+          env:
+            - name: MONGODB_URI
+              value: mongodb://mongo/metadata

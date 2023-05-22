@@ -1,0 +1,25 @@
+##Create pod and expose to 8080 port
+kubectl run metadataservice --image luckyganesh/metadata-service:v1 --port 8080
+
+or
+
+##Create metadata pod
+kubectl create -f metadata-pod.yaml
+
+##Check logs
+kubectl logs metadataservice
+
+##Exec into the container using /bin/sh command
+docker exec -it containerid sh
+
+##Check pod ip
+kubectl get pod metadataservice -o wide
+
+##Describe pod
+kubectl describe metadataservice
+
+##Hit the pod with ip
+minikube ssh
+curl http://10.244.0.6:8080/metadata/
+
+

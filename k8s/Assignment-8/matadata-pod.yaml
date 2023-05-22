@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: metadataservice
+  labels:
+    app: metadata
+spec:
+  containers:
+    - image: luckyganesh/metadata-service:v2
+      name: metadataservice
+      env:
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: mongodburi
+
