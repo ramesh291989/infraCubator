@@ -1,14 +1,8 @@
-##Create mongo pod
+##Create mongo deployment
 kubectl create -f deploy-mongo.yaml
 
-##Create mongo clusterip service
-kubectl create -f mongo-service.yaml
-
-##Create metadata pod
+##Create metadata deployment
 kubectl create -f deploy-metadata.yaml
-
-##Create metadata nodeport service
-kubectl create -f nodeport-service.yaml
 
 ##post the data from host machine
 curl --header "Content-Type: application/json" /
