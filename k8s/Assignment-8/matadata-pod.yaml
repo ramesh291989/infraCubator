@@ -11,7 +11,7 @@ spec:
       env:
         - name: MONGODB_URI
           valueFrom:
-            secretKeyRef:
-              name: app-secret
+            configMapKeyRef:
+              name: app-config
               key: mongodburi
 

@@ -10,5 +10,8 @@ spec:
       name: metadataservice
       env:
         - name: MONGODB_URI
-          value: mongodb://mongo/metadata
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: mongodburi
 
