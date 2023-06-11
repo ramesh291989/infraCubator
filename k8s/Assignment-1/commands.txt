@@ -10,7 +10,7 @@ kubectl create -f metadata-pod.yaml
 kubectl logs metadataservice
 
 ##Exec into the container using /bin/sh command
-docker exec -it containerid sh
+kubectl exec -it --namespace=default metadataservice -- sh
 
 ##Check pod ip
 kubectl get pod metadataservice -o wide

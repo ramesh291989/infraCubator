@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/docker-assignments/Assignment-2/go-app/a87d0f53a20d2cc555401b5888236bdd47fcb0e3e0fa7ad81f79fb91f68df63c/layer/go/go-app" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/go-app" vcs="Git" />
   </component>
 </project>
