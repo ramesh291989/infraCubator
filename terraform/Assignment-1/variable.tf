@@ -25,7 +25,7 @@ default = "main"
 
 variable ami {
 type = string
-default = "ami-0550c2ee59485be53"
+default = "ami-0416c18e75bd69567"
 }
 
 variable instance-type {

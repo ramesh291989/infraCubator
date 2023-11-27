@@ -100,7 +100,7 @@ resource "aws_instance" "test-main" {
   subnet_id     = aws_subnet.test-subnet.id
   vpc_security_group_ids = [aws_security_group.test-sg.id]
   key_name      = aws_key_pair.test-key-pair.key_name
-  user_data = file("ec2-userdata.sh")
+#   user_data = base64encode(file("ec2-userdata.sh"))
 
   tags = {
     Name = var.tagname
